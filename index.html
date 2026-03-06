@@ -15,6 +15,27 @@
         <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">     
 </head>
 <body>
-   
+    <!-- log in  -->
+   <main class=" flex justify-center items-center min-h-screen">
+         <div class="card w-96 bg-white shadow-sm">
+  <div class="card-body justify-center">
+    <div class="flex justify-center">
+        <img src="./assets/github-logo.png" alt="git-hub-logo">
+    </div>
+    <div>
+        <h2 class="text-[24px] text-[#1F2937] text-center">GitHub Issues Tracker</h2>
+        <p class="text-[16px] text-[#64748B] text-center">Sign in to manage your issues</p>
+    </div>
+    <label class="label">Username</label>
+  <input type="text" class="input" id="user" placeholder="Enter Username" />
+  <label class="label">Password</label>
+  <input type="password" id="Password" class="input" placeholder="Enter Password" />
+    <div class="mt-6">
+      <button id="submitBtn" class="btn btn-primary btn-block hover:bg-black">Sign In</button>
+    </div>
+  </div>
+</div>
+   </main>
+   <script src="./script/script.js" ></script>
 </body>
 </html>
