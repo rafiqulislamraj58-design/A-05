@@ -1,3 +1,4 @@
+// login and password
 const userInput = document.querySelector('#user');
 const passInput = document.querySelector('#Password');
 const logIn = document.getElementById('submitBtn')
@@ -9,10 +10,10 @@ document.getElementById('submitBtn').addEventListener('click',function(){
         window.location.replace('home.html');
         
     },2000)
-    alert('log in success');
+    
     
     
    } else {
-    alert('invaild user or password');
+    document.getElementById('error').classList.remove('hidden')
    }
 });
