@@ -3,13 +3,16 @@ const  container = document.getElementById('card-container');
 let allIssue = [];
 
 async function loadIssue() {
+    showSpinner()
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const result = await res.json();
     allIssue = result.data;
+    hideSpinner()
     renderCardsIssue(allIssue)
   
 }
  function renderCardsIssue(issues) {
+    document.getElementById('isue-live').innerText = issues.length
     container.innerHTML='';
     issues.forEach(cart => {
         console.log(cart);

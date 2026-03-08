@@ -1,8 +1,11 @@
 let all = document.getElementById('btn-all');
 let open = document.getElementById('btn-open');
 let closed = document.getElementById('btn-closed');
+let count = document.getElementById('isue-live');
+
 
 all.addEventListener('click',function(){
+
     renderCardsIssue(allIssue);
     open.classList.remove('btn-active','btn-primary' )
     closed.classList.remove('btn-active','btn-primary' )
@@ -11,13 +14,15 @@ all.addEventListener('click',function(){
 open.addEventListener('click',function(){
 const openIssue = allIssue.filter(cart=>cart.status==='open')
 renderCardsIssue(openIssue)
+count.innerText = openIssue.length
 all.classList.remove('btn-active','btn-primary' )
-closed.classList.remove('btn-active','btn-primary' )
+closed.classList.remove('btn-active','btn-primary')
 open.classList.add('btn-active','btn-primary' )
 })
 closed.addEventListener('click',function(){
 const closedIssue = allIssue.filter(cart=>cart.status==='closed')
 renderCardsIssue(closedIssue);
+count.innerText = closedIssue.length
 all.classList.remove('btn-active','btn-primary' )
 closed.classList.add('btn-active','btn-primary' )
 open.classList.remove('btn-active','btn-primary' )
