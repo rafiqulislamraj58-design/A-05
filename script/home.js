@@ -1,12 +1,19 @@
 
-const  container = document.getElementById('card-container')
+const  container = document.getElementById('card-container');
+let allIssue = [];
 
 async function loadIssue() {
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const result = await res.json();
-    result.data.forEach(cart => {
+    allIssue = result.data;
+    renderCardsIssue(allIssue)
+  
+}
+ function renderCardsIssue(issues) {
+    container.innerHTML='';
+    issues.forEach(cart => {
         console.log(cart);
-         container.innerHTML +=`<div class="card-open bg-base-100  w-full h-full shadow-sm border-t-4 ${cart.priority==='low'?'border-purple-500 ':'border-green-500'}  rounded-sm hover:translate-y-0.5 hover:shadow-sm  ${cart.priority==='low'? 'hover:shadow-purple-500': 'hover:shadow-green-500'} transition-all duration-200">
+         container.innerHTML +=`<div class="card-open bg-base-100  w-full h-full shadow-sm border-t-4 ${cart.status==='closed'?'border-purple-500 ':'border-green-500'}  rounded-sm hover:translate-y-0.5 hover:shadow-sm  ${cart.status==='open'? 'hover:shadow-green-500' :'hover:shadow-purple-500'} transition-all duration-200">
                 <div class="card-body flex flex-col">
                     <div class="img w-full flex justify-between">
                         <img src="./assets/Open-Status.png" class="w-8 h-8" alt="open">
@@ -25,5 +32,5 @@ async function loadIssue() {
                 </div>
                 </div> `
     });
-}
+   }
 loadIssue();
