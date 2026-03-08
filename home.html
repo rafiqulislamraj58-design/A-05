@@ -93,11 +93,51 @@
              </div> -->
         </div>
 </main>
-   
+<!-- modals -->
+<!-- Open the modal using ID.showModal() method -->
+<!-- Open the modal using ID.showModal() method -->
+
+<dialog id="issueModals" class="modal">
+  <div class="modal-box">
+    <div><h3 id="modalTitle" class="text-lg font-bold">Fix broken image uploads</h3></div>
+    <div class=" flex gap-2.5 items-center">
+        <button id="modalStatus"  class="btn bg-green-500 rounded-full  text-white">Success</button>
+        <span class="text-gray-400">.</span>
+     <p id="authorName" class="text-gray-400 text-[16px]">Opened by Fahim Ahmed</p>
+     <span class="text-gray-400">.</span>
+      <p id="cardDate" class="text-gray-400 text-[16px]">22/02/2026</p>
+    </div>
+    <br>
+    <div id="modalLabels" class="flex gap-3.5">
+        <button class="btn btn-soft btn-warning rounded-full">Warning</button>
+        <button class="btn btn-soft btn-warning rounded-full">Warning</button>
+    </div>
+    <p id="discription" class="py-4">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+    <div class="bg-[#F8FAFC] rounded-sm flex justify-between p-3.5">
+        <div>
+            <p >Assignee:</p>
+            <h2 id="name">Fahim Ahmed</h2>
+        </div>
+         <div>
+        <p >Priority:</p>
+        <button id="priority" class="btn btn-active btn-error rounded-full">High</button>
+         </div>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn rounded-sm">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+   <!-- scripts -->
     <script src="./script/loading.js"></script>
    <script src="./script/home.js" ></script>
    <script src="./script/filter.js"></script>
    <script src="./script/search.js"></script>
+   <script src="./script/modals.js"></script>
   
 </body>
 </html>

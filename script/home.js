@@ -16,7 +16,7 @@ async function loadIssue() {
     container.innerHTML='';
     issues.forEach(cart => {
         console.log(cart);
-         container.innerHTML +=`<div class="card-open bg-base-100  w-full h-full shadow-sm border-t-4 ${cart.status==='closed'?'border-purple-500 ':'border-green-500'}  rounded-sm hover:translate-y-0.5 hover:shadow-sm  ${cart.status==='open'? 'hover:shadow-green-500' :'hover:shadow-purple-500'} transition-all duration-200">
+         container.innerHTML +=`<div onclick=openModal(${cart.id}) class="card-open bg-base-100  w-full h-full shadow-sm border-t-4 ${cart.status==='closed'?'border-purple-500 ':'border-green-500'}  rounded-sm hover:translate-y-0.5 hover:shadow-sm  ${cart.status==='open'? 'hover:shadow-green-500' :'hover:shadow-purple-500'} transition-all duration-200">
                 <div class="card-body flex flex-col">
                     <div class="img w-full flex justify-between">
                         <img src="./assets/Open-Status.png" class="w-8 h-8" alt="open">
